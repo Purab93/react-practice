@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { css } from 'glamor';
 
 const NewsItem = ({item}) =>{
@@ -20,7 +20,7 @@ const NewsItem = ({item}) =>{
     });
 
     return (
-        <div className= {`${news_item} ${item_grey}`}{...news_item} {...item_grey}>
+        <div className= {`${news_item}`}>
             <h3>{item.title}</h3>
             <div>{item.feed}</div>
         </div>
