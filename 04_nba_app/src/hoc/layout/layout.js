@@ -4,11 +4,24 @@ import './layout.css';
 import Header from '../../components/header/header';
 
 class Layout extends Component{
-    state={}
+    state={
+        showNav: false
+    }
+
+    toggleSideNav(showNav){
+        this.setState({
+            showNav
+        })
+    }
+
     render(){
         return (
             <div>
-                <Header />
+                <Header 
+                    showNav={this.state.showNav}
+                    onHideNav = {() => this.toggleSideNav(false)}
+                    onOpenNave = {() => this.toggleSideNav(true)}
+                />
                 {this.props.children}
                 Footer
             </div>
